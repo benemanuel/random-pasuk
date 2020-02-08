@@ -259,7 +259,7 @@ switch ($book) {
    $url_output=$home_url . '?' . $shortbook . $ch . ':' . $vr . '-' . $vr;
 //same place   $output_1='<a href="';
 //new tab
-   $output_1="<a target = '_blank' href=";
+   $output_1='<a target = ' . "'_blank'" . ' href="';
 
    $output_2='"/>';
    $output_3="</a>";
