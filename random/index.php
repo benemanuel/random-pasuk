@@ -309,9 +309,9 @@ $key = $random * 10;
 // if $pasuk contains "af" then find pasuk's comment from Comments_utf8.txt 
 
 //echo "<div style='visibility: hidden'>
-echo "<p> The number is:  $random </p>";
-echo "<p> The key is:  $key </p>";
-echo '<p dir="rtlSR" lang="he">';
+//echo "<p> The number is:  $random </p>";
+//echo "<p> The key is:  $key </p>";
+echo '<p dir="rtl" lang="he">';
 //awk '$4 == $key' Comments_utf8.txt
 //awk '$4 == $key' letteris_utf8.txt
 
