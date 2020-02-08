@@ -26,7 +26,7 @@ of the license along with this Font Software. If not, go to
 
 /* set body to use Andika New Basic in .woff format */
 body {
-  font-family: EzraSILW, sans-serif;
+  font-family: EzraSILSRW, sans-serif;
     /* fall back to sans-serif so that it's really obvious if the fonts don't load */
 }
 /* remove bold styling from heading */

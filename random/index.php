@@ -310,12 +310,13 @@ $key = $random * 10;
 
 //echo "<div style='visibility: hidden'>
 echo "<p> The number is:  $random </p>";
-echo "<p> The key is:  $key </p>";
+echo '<p> The key is:  $key </p><p dir="rtlSR" lang="he">';
 //awk '$4 == $key' Comments_utf8.txt
 //awk '$4 == $key' letteris_utf8.txt
+
 $comment_row=exec("awk '$4 == $key' Comments_utf8.txt");
 $verse_row=exec("awk '$4 == $key' letteris_utf8.txt");
-echo "<p> The Verse is: $verse_row</p>";
+echo "</p><p> The Verse is: $verse_row</p>";
 echo "<p> The Comments are: $comment_row</p>";
 echo "</details>"
 
