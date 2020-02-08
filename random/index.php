@@ -278,7 +278,7 @@ switch ($book) {
 else{
          echo "No matches found";
  }
-echo "<details><br>"
+echo "<details><br>";
 
 $home_eng_url="https://www.biblegateway.com/passage/?search=";
 $fr_flag='<img title="français" src="../files/fr.png" alt="French" width="16" height="11" />';
