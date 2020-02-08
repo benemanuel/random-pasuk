@@ -287,13 +287,13 @@ $ru_flag='<img title="русски" src="../files/ru.png" alt="Russian" width="1
 $en_flag='<img title="English" src="../files/en.png" alt="English" width="16" height="11" />';
 
 $version="NET"; $flag=$en_flag;
-$en_url=$output_1 . '"' . $home_eng_url . $shortbook . $chap . ':' . $verse . '-' . $verse . '&version=' . $version . '">';
+$en_url=$output_1 . '"' . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '&version=' . $version . '">';
 
 $version="BDS"; $flag=$fr_flag;
-$fr_url=$output_1 . '"' . $home_eng_url . $shortbook . $chap . ':' . $verse . '-' . $verse . '&version=' . $version . '">';
+$fr_url=$output_1 . '"' . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '&version=' . $version . '">';
 
 $version="RUSV"; $flag=$ru_flag;
-$ru_url=$output_1 . '"' . $home_eng_url . $shortbook . $chap . ':' . $verse . '-' . $verse . '&version=' . $version . '">';
+$ru_url=$output_1 . '"' . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '&version=' . $version . '">';
 ?>
     <?= $en_url; ?>
 	<image style="float:right;margin:5px;" title="English" src="../files/en.png" alt="English" width="50px" height="50px"/></a>
