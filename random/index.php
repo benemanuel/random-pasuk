@@ -294,14 +294,14 @@ $fr_url=$output_1 . '"' . $home_eng_url . $shortbook . $chap . ':' . $verse . '-
 
 $version="RUSV"; $flag=$ru_flag;
 $ru_url=$output_1 . '"' . $home_eng_url . $shortbook . $chap . ':' . $verse . '-' . $verse . '&version=' . $version . '">';
-
-       <?= $en_url; ?>
+?>
+    <?= $en_url; ?>
 	<image style="float:right;margin:5px;" title="English" src="../files/en.png" alt="English" width="50px" height="50px"/></a>
 	<?= $fr_url; ?>
 	<image style="float:right;margin:5px;" title="français" src="../files/fr.png" alt="French"" width="50px" height="50px"/></a>
 	<?= $ru_url; ?>
 	<image style="float:right;margin:5px;" title="русски" src="../files/ru.png" alt="Russian"  width="50px" height="50px"/></a>
- 
+<?
 echo "<date>" . date("d-m-Y H:i:s") . "</date>";
 // grep "3900" letteris_utf8.txt |grep 01O |grep 8|hexdump -C|grep af
 //Comments_utf8.txt
