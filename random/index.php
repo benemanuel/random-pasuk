@@ -285,13 +285,13 @@ $ru_flag='<img title="русски" src="../files/ru.png" alt="Russian" width="1
 $en_flag='<img title="English" src="../files/en.png" alt="English" width="16" height="11" />';
 
 $version="NET"; $flag=$en_flag;
-$en_url=$output_1 . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '&version=' . $version . $output_2 . "en" . $output_3;
+$en_url=$output_1 . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '&version=' . $version . $output_2;
 
 $version="BDS"; $flag=$fr_flag;
-$fr_url=$output_1 . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '&version=' . $version . $output_2 . "fr" . $output_3;
+$fr_url=$output_1 . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '&version=' . $version . $output_2;
 
 $version="RUSV"; $flag=$ru_flag;
-$ru_url=$output_1 . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '&version=' . $version . $output_2 . "ru" . $output_3;
+$ru_url=$output_1 . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '&version=' . $version . $output_2;
 ?>
     <?= $en_url; ?>
 	<image style="float:right;margin:5px;" title="English" src="../files/en.png" alt="English" width="50px" height="50px"/></a>
@@ -299,7 +299,7 @@ $ru_url=$output_1 . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '
 	<image style="float:right;margin:5px;" title="français" src="../files/fr.png" alt="French"" width="50px" height="50px"/></a>
 	<?= $ru_url; ?>
 	<image style="float:right;margin:5px;" title="русски" src="../files/ru.png" alt="Russian"  width="50px" height="50px"/></a>
-<?
+
 echo "<date>" . date("d-m-Y H:i:s") . "</date>";
 // grep "3900" letteris_utf8.txt |grep 01O |grep 8|hexdump -C|grep af
 //Comments_utf8.txt
