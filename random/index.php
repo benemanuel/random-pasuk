@@ -257,12 +257,16 @@ switch ($book) {
    echo "</br><h2>" . $pasuk . "</h2></br>";
    $home_url="http://geulah.org.il/Tanach/Tanach.xml";
    $url_output=$home_url . '?' . $shortbook . $ch . ':' . $vr . '-' . $vr;
-   $output_1='<a href="';
+//same place   $output_1='<a href="';
+//new tab
+   $output_1="<a target = '_blank' href=";
+
    $output_2='"/>';
    $output_3="</a>";
 
 //   $text_output =$fullbook . ' ' . $ch . ' ' . $vr;
    $text_output=  "\n" . $b . $hebbook  . " " . $c . $ch . " " . $v . $vr . "<br>\n";
+   
    echo($output_1 . $url_output . $output_2 . $text_output . $output_3);
 
    $url_output=$home_url . '?' . $shortbook . $ch . '-' . $ch;
