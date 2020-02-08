@@ -300,6 +300,7 @@ $ru_url=$output_1 . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '
 	<?= $ru_url; ?>
 	<image style="float:right;margin:5px;" title="русски" src="../files/ru.png" alt="Russian"  width="50px" height="50px"/></a>
 
+<?php
 echo "<date>" . date("d-m-Y H:i:s") . "</date>";
 // grep "3900" letteris_utf8.txt |grep 01O |grep 8|hexdump -C|grep af
 //Comments_utf8.txt
