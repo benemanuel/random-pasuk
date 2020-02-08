@@ -278,7 +278,31 @@ switch ($book) {
 else{
          echo "No matches found";
  }
-echo "<details><date>" . date("d-m-Y H:i:s") . "</date>";
+echo "<details><br>"
+
+$home_eng_url="https://www.biblegateway.com/passage/?search=";
+$fr_flag='<img title="français" src="../files/fr.png" alt="French" width="16" height="11" />';
+$il_flag='<img title="בעברית" src="../files/il.png" alt="Hebrew" width="16" height="11" />';
+$ru_flag='<img title="русски" src="../files/ru.png" alt="Russian" width="16" height="11" />';
+$en_flag='<img title="English" src="../files/en.png" alt="English" width="16" height="11" />';
+
+$version="NET"; $flag=$en_flag;
+$en_url=$output_1 . '"' . $home_eng_url . $shortbook . $chap . ':' . $verse . '-' . $verse . '&version=' . $version . '">';
+
+$version="BDS"; $flag=$fr_flag;
+$fr_url=$output_1 . '"' . $home_eng_url . $shortbook . $chap . ':' . $verse . '-' . $verse . '&version=' . $version . '">';
+
+$version="RUSV"; $flag=$ru_flag;
+$ru_url=$output_1 . '"' . $home_eng_url . $shortbook . $chap . ':' . $verse . '-' . $verse . '&version=' . $version . '">';
+
+       <?= $en_url; ?>
+	<image style="float:right;margin:5px;" title="English" src="../files/en.png" alt="English" width="50px" height="50px"/></a>
+	<?= $fr_url; ?>
+	<image style="float:right;margin:5px;" title="français" src="../files/fr.png" alt="French"" width="50px" height="50px"/></a>
+	<?= $ru_url; ?>
+	<image style="float:right;margin:5px;" title="русски" src="../files/ru.png" alt="Russian"  width="50px" height="50px"/></a>
+ 
+echo "<date>" . date("d-m-Y H:i:s") . "</date>";
 // grep "3900" letteris_utf8.txt |grep 01O |grep 8|hexdump -C|grep af
 //Comments_utf8.txt
 // if $pasuk contains "af" then find pasuk's comment from Comments_utf8.txt 
