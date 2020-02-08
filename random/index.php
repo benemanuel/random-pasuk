@@ -260,7 +260,6 @@ switch ($book) {
 //same place   $output_1='<a href="';
 //new tab
    $output_1='<a target = ' . "'_blank'" . ' href="';
-
    $output_2='"/>';
    $output_3="</a>";
 
@@ -273,7 +272,6 @@ switch ($book) {
    $text_output=  "\n" . $b . $hebbook  . " " . $c . $ch . "<br>\n";
 
    echo($output_1 . $url_output . $output_2 . $text_output . $output_3);
-   
 }
 else{
          echo "No matches found";
@@ -287,13 +285,13 @@ $ru_flag='<img title="русски" src="../files/ru.png" alt="Russian" width="1
 $en_flag='<img title="English" src="../files/en.png" alt="English" width="16" height="11" />';
 
 $version="NET"; $flag=$en_flag;
-$en_url=$output_1 . '"' . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '&version=' . $version . '">';
+$en_url=$output_1 . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '&version=' . $version . $output_2 . "en" . $output_3;
 
 $version="BDS"; $flag=$fr_flag;
-$fr_url=$output_1 . '"' . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '&version=' . $version . '">';
+$fr_url=$output_1 . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '&version=' . $version . $output_2 . "fr" . $output_3;
 
 $version="RUSV"; $flag=$ru_flag;
-$ru_url=$output_1 . '"' . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '&version=' . $version . '">';
+$ru_url=$output_1 . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '&version=' . $version . $output_2 . "ru" . $output_3;
 ?>
     <?= $en_url; ?>
 	<image style="float:right;margin:5px;" title="English" src="../files/en.png" alt="English" width="50px" height="50px"/></a>
