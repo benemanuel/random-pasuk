@@ -302,11 +302,21 @@ $ru_url=$output_1 . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '
 
 <?php
 echo "<date>" . date("d-m-Y H:i:s") . "</date>";
+$key = $random * 10;
+
 // grep "3900" letteris_utf8.txt |grep 01O |grep 8|hexdump -C|grep af
 //Comments_utf8.txt
 // if $pasuk contains "af" then find pasuk's comment from Comments_utf8.txt 
+
 //echo "<div style='visibility: hidden'>
 echo "<p> The number is:  $random </p>";
+echo "<p> The key is:  $key </p>";
+//awk '$4 == $key' Comments_utf8.txt
+//awk '$4 == $key' letteris_utf8.txt
+$comment_row=exec("awk '$4 == $key' Comments_utf8.txt");
+$verse_row=exec("awk '$4 == $key' letteris_utf8.txt");
+echo "<p> The Verse is: $verse_row</p>";
+echo "<p> The Comments are: $comment_row</p>";
 echo "</details>"
 
 //}
