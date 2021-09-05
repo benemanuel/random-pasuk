@@ -8,7 +8,7 @@
 <?php
 
 	$random=htmlspecialchars($_GET["random"]);
-	echo "check page,  The number is: $random, http://geulah.org.il/random/check/?random=x, you can enter x from 0-23212";
+	echo "check page,  The number is: $random, http://geulah.org.il/random/check/?random=x, you can enter x from 1-23213";
 
     $file = '../letteris_utf8.txt';
 
