@@ -279,10 +279,10 @@ else{
 echo "<details><br>";
 
 $home_eng_url="https://www.biblegateway.com/passage/?search=";
-$fr_flag='<img title="français" src="../files/fr.png" alt="French" width="16" height="11" />';
-$il_flag='<img title="בעברית" src="../files/il.png" alt="Hebrew" width="16" height="11" />';
-$ru_flag='<img title="русски" src="../files/ru.png" alt="Russian" width="16" height="11" />';
-$en_flag='<img title="English" src="../files/en.png" alt="English" width="16" height="11" />';
+$fr_flag='<img title="français" src="files/fr.png" alt="French" width="16" height="11" />';
+$il_flag='<img title="בעברית" src="files/il.png" alt="Hebrew" width="16" height="11" />';
+$ru_flag='<img title="русски" src="files/ru.png" alt="Russian" width="16" height="11" />';
+$en_flag='<img title="English" src="files/en.png" alt="English" width="16" height="11" />';
 
 $version="NET"; $flag=$en_flag;
 $en_url=$output_1 . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '&version=' . $version . $output_2;
@@ -294,11 +294,11 @@ $version="RUSV"; $flag=$ru_flag;
 $ru_url=$output_1 . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '&version=' . $version . $output_2;
 ?>
     <?= $en_url; ?>
-	<image style="float:right;margin:5px;" title="English" src="../files/en.png" alt="English" width="50px" height="50px"/></a>
+	<image style="float:right;margin:5px;" title="English" src="files/en.png" alt="English" width="50px" height="50px"/></a>
 	<?= $fr_url; ?>
-	<image style="float:right;margin:5px;" title="français" src="../files/fr.png" alt="French"" width="50px" height="50px"/></a>
+	<image style="float:right;margin:5px;" title="français" src="files/fr.png" alt="French"" width="50px" height="50px"/></a>
 	<?= $ru_url; ?>
-	<image style="float:right;margin:5px;" title="русски" src="../files/ru.png" alt="Russian"  width="50px" height="50px"/></a>
+	<image style="float:right;margin:5px;" title="русски" src="files/ru.png" alt="Russian"  width="50px" height="50px"/></a>
 
 <?php
 echo "<date>" . date("d-m-Y H:i:s") . "</date>";
