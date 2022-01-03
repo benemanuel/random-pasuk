@@ -7,4 +7,6 @@ putting in the seed value for a verse can be done using check/?random=number val
 eg: verse 32 https://random.geulah.org.il/check/?random=32<br>
   will show The Verse is: 01O 2 1 320 <br>וַיְכֻלּ֛וּ הַשָּׁמַ֥יִם וְהָאָ֖רֶץ וְכָל־צְבָאָֽם׃
   
-  
+# update.sh
+the tanach used here is pulled from it's sister project of digitalizing the letteris bible<br>
+see https://github.com/benemanuel/letteris for details
