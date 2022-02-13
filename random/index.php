@@ -320,7 +320,7 @@ $verse_row=exec("awk '$4 == $key' letteris_utf8.txt");
 $editor_row=exec("awk '$4 == $key'Editornotes_utf8.txt");
 echo "</p><p> The Verse is: $verse_row</p>";
 echo "<p> The Comments are: $comment_row</p>";
-echo "<p> The Editor\'s Comments are: $editor_row</p>";
+echo "<p> The Editor's Comments are: $editor_row</p>";
 echo "</details>"
 
 //}
