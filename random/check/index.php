@@ -6,12 +6,16 @@
 <body>
 <h2>
 <?php
-
 	$random=htmlspecialchars($_GET["random"]);
-	echo "check page,  The number is: $random, http://geulah.org.il/random/check/?random=x, you can enter x from 1-23213";
+	if (! $random)
+         {
+           echo "check page,  The number is: $random, http://geulah.org.il/random/check/?random=x, you can enter x from 1-23213";
+         }
+       else
+     {
 
     $file = '../letteris_utf8.txt';
-    $comment = '../Comments_utf8.txt';
+
     $word = $random . "0";
     $searchfor = "\t" . $word . "\t";
 
@@ -276,30 +280,21 @@ $ru_url=$output_1 . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '
 	<image style="float:right;margin:5px;" title="русски" src="../files/ru.png" alt="Russian"  width="50px" height="50px"/></a>
 
 <?php
+
 echo "<date>" . date("d-m-Y H:i:s") . "</date>";
+
 $key = $random * 10;
 
-// grep "3900" letteris_utf8.txt |grep 01O |grep 8|hexdump -C|grep af
-//Comments_utf8.txt
-// if $pasuk contains "af" then find pasuk's comment from Comments_utf8.txt 
+$verse_row=exec("awk '$4 == $key' $file|sed 's/[0-9]*//g;s/O//g;s/^[ \t]*//'");
+echo '<p> The Verse is:<p dir="rtl" lang="he">',$verse_row,'</p>';
 
-//echo "<div style='visibility: hidden'>
-//echo "<p> The number is:  $random </p>";
-//echo "<p> The key is:  $key </p>";
-echo '<p dir="rtl" lang="he">';
-//awk '$4 == $key' Comments_utf8.txt
-//awk '$4 == $key' letteris_utf8.txt
+$file = '../Comments_utf8.txt';
+include '../show_comments.php';
+$file = '../Editornotes_utf8.txt';
+include '../show_editor.php';
 
-$comment_row=exec("awk '$4 == $key' $comment");
-$verse_row=exec("awk '$4 == $key' $file");
-$editor_row=exec("awk '$4 == $key'Editornotes_utf8.txt");
-echo "</p><p> The Verse is: $verse_row</p>";
-echo "<p> The Comments are: $comment_row</p>";
-echo "<p> The Editor's Comments are: $editor_row</p>";
-echo "</details>"
-
-//}
+}
 ?>
+
 </body>
 </html>
-

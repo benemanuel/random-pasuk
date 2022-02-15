@@ -309,21 +309,21 @@ $key = $random * 10;
 // if $pasuk contains "af" then find pasuk's comment from Comments_utf8.txt 
 
 //echo "<div style='visibility: hidden'>
-//echo "<p> The number is:  $random </p>";
+$nx = "http://geulah.org.il/random/check/?random=$random";
+echo "</br><a target = '_blank' href=$nx>$random<br></a>";
 //echo "<p> The key is:  $key </p>";
-echo '<p dir="rtl" lang="he">';
-//awk '$4 == $key' Comments_utf8.txt
-//awk '$4 == $key' letteris_utf8.txt
+//echo '<p dir="rtl" lang="he">';
 
-$comment_row=exec("awk '$4 == $key' Comments_utf8.txt");
-$verse_row=exec("awk '$4 == $key' letteris_utf8.txt");
-$editor_row=exec("awk '$4 == $key'Editornotes_utf8.txt");
-echo "</p><p> The Verse is: $verse_row</p>";
-echo "<p> The Comments are: $comment_row</p>";
-echo "<p> The Editor's Comments are: $editor_row</p>";
+$verse_row=exec("awk '$4 == $key' letteris_utf8.txt|sed 's/[0-9]*//g;s/O//g;s/^[ \t]*//'");
+echo '<p> The Verse is:<p dir="rtl" lang="he">',$verse_row,'</p>';
+
+$file = 'Comments_utf8.txt';
+include 'show_comments.php';
+$file = 'Editornotes_utf8.txt';
+include 'show_editor.php';
+
 echo "</details>"
 
-//}
 ?>
 </body>
 </html>
