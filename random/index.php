@@ -321,6 +321,8 @@ $file = 'Comments_utf8.txt';
 include 'show_comments.php';
 $file = 'Editornotes_utf8.txt';
 include 'show_editor.php';
+$file = 'Hebrew_utf8.txt';
+include 'show_hebrew.php';
 
 echo "</details>"
 

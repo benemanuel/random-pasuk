@@ -1,5 +1,6 @@
 <?php
 $answer = 0;
+$firsttime = 0;
 //$file = 'Editornotes_utf8.txt';
 
 $row = 0;
@@ -18,13 +19,14 @@ if (($fh = fopen($file, "r")) !== FALSE) {
 //      $chap = $data[1];
 //      $verse = $data[2];
       $text = $data[4];
-      echo '<p> The Editor\'s Comments are:<p dir="rtl" lang="he">';
-      echo $text . PHP_EOL;
-      echo '</p>';
-     }  
+      if ($firsttime == 0)
+      {
+       echo '<p>The Editor\'s Comments are:</p>';
+       $firsttime = 1;
+      }
+      echo '<p dir="rtl" lang="he">' . $text . PHP_EOL . '</p>';
+     }
     }
     fclose($fh);
 }
 ?>
-
-

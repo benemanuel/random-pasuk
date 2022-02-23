@@ -7,11 +7,16 @@
 <h2>
 <?php
 	$random=htmlspecialchars($_GET["random"]);
-	if (! $random)
+	if (! $random) 
          {
-           echo "check page,  The number is: $random, http://geulah.org.il/random/check/?random=x, you can enter x from 1-23213";
+           echo "check page, enter number from 1-23213 http://random.geulah.org.il/check/?random=x";
          }
        else
+       if  (($random > 23213) | ($random < 1))
+	{
+          echo "check page, use number only from 1-23213";
+        }
+      else
      {
 
     $file = '../letteris_utf8.txt';
@@ -233,7 +238,11 @@ switch ($book) {
    $pasuk = str_replace ($white, " ", $verse);
    $pasuk = trim ($pasuk, $numbers);
 
-   echo "</br><h2>" . $pasuk . "</h2></br>";
+   echo "</br><h2>";
+//   echo "<!";
+   echo $pasuk;
+//   echo "--->";
+   echo "</h2></br>";
    $home_url="http://geulah.org.il/Tanach/Tanach.xml";
    $url_output=$home_url . '?' . $shortbook . $ch . ':' . $vr . '-' . $vr;
 //same place   $output_1='<a href="';
@@ -255,7 +264,8 @@ switch ($book) {
 else{
          echo "No matches found";
  }
-echo "<details><br>";
+//echo "<details><br>";
+echo "<br>";
 
 $home_eng_url="https://www.biblegateway.com/passage/?search=";
 $fr_flag='<img title="français" src="../files/fr.png" alt="French" width="16" height="11" />';
@@ -286,13 +296,16 @@ echo "<date>" . date("d-m-Y H:i:s") . "</date>";
 $key = $random * 10;
 
 $verse_row=exec("awk '$4 == $key' $file|sed 's/[0-9]*//g;s/O//g;s/^[ \t]*//'");
-echo '<p> The Verse is:<p dir="rtl" lang="he">',$verse_row,'</p>';
+echo '<br><p> The Verse is:<p dir="rtl" lang="he">',$verse_row,'</p>';
 
 $file = '../Comments_utf8.txt';
 include '../show_comments.php';
+
 $file = '../Editornotes_utf8.txt';
 include '../show_editor.php';
 
+$file = '../Hebrew_utf8.txt';
+include '../show_hebrew.php';
 }
 ?>
 
