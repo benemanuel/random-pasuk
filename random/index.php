@@ -1,6 +1,8 @@
 <html dir="rtl" lang="he">
 <head>
-  <link rel="stylesheet" href="EzraSIL-webfont.css" type="text/css">
+  <link rel="stylesheet"
+        href="/EzraSIL-webfont.css"
+        type="text/css">
   <meta content="text/html; charset=UTF-8" http-equiv="content-type">
 </head>
 <body>
@@ -255,8 +257,9 @@ switch ($book) {
    $pasuk = trim ($pasuk, $numbers);
 
    echo "</br><h2>" . $pasuk . "</h2></br>";
-   $home_url="http://geulah.org.il/Tanach/Tanach.xml";
-   $url_output=$home_url . '?' . $shortbook . $ch . ':' . $vr . '-' . $vr;
+   //   $home_url="http://geulah.org.il/Tanach/Tanach.xml";
+   $home_url="https://transliteration.geulah.org.il/citation.php";
+   $url_output=$home_url . '?verse=' . $shortbook . $ch . ':' . $vr;;
 //same place   $output_1='<a href="';
 //new tab
    $output_1='<a target = ' . "'_blank'" . ' href="';
@@ -268,7 +271,7 @@ switch ($book) {
    
    echo($output_1 . $url_output . $output_2 . $text_output . $output_3);
 
-   $url_output=$home_url . '?' . $shortbook . $ch . '-' . $ch;
+   $url_output=$home_url . '?verse=' . $shortbook . $ch .  '&highlight='.  $vr;
    $text_output=  "\n" . $b . $hebbook  . " " . $c . $ch . "<br>\n";
 
    echo($output_1 . $url_output . $output_2 . $text_output . $output_3);
@@ -278,20 +281,24 @@ else{
  }
 echo "<details><br>";
 
+include_once 'show_transilation.php';
+
 $home_eng_url="https://www.biblegateway.com/passage/?search=";
 $fr_flag='<img title="français" src="files/fr.png" alt="French" width="16" height="11" />';
 $il_flag='<img title="בעברית" src="files/il.png" alt="Hebrew" width="16" height="11" />';
 $ru_flag='<img title="русски" src="files/ru.png" alt="Russian" width="16" height="11" />';
 $en_flag='<img title="English" src="files/en.png" alt="English" width="16" height="11" />';
 
-$version="NET"; $flag=$en_flag;
-$en_url=$output_1 . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '&version=' . $version . $output_2;
+$key = $random * 10;
+$lang='en'; $version="NET"; $flag=$en_flag;
+$en_url=show_transilation($key,$shortbook. $ch. ":". $vr, $lang, $version, $both_url_text);
 
-$version="BDS"; $flag=$fr_flag;
-$fr_url=$output_1 . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '&version=' . $version . $output_2;
+$lang='fr'; $version="BDS"; $flag=$fr_flag;
+$fr_url=show_transilation($key,$shortbook. $ch. ":". $vr, $lang, $version, $both_url_text);
 
-$version="RUSV"; $flag=$ru_flag;
-$ru_url=$output_1 . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '&version=' . $version . $output_2;
+$lang='ru'; $version="RUSV"; $flag=$ru_flag;
+$ru_url=show_transilation($key,$shortbook. $ch. ":". $vr, $lang, $version, $both_url_text);
+
 ?>
     <?= $en_url; ?>
 	<image style="float:right;margin:5px;" title="English" src="files/en.png" alt="English" width="50px" height="50px"/></a>
@@ -302,14 +309,17 @@ $ru_url=$output_1 . $home_eng_url . $shortbook . $ch . ':' . $vr . '-' . $vr . '
 
 <?php
 echo "<date>" . date("d-m-Y H:i:s") . "</date>";
-$key = $random * 10;
+
 
 // grep "3900" letteris_utf8.txt |grep 01O |grep 8|hexdump -C|grep af
 //Comments_utf8.txt
 // if $pasuk contains "af" then find pasuk's comment from Comments_utf8.txt 
 
 //echo "<div style='visibility: hidden'>
-$nx = "http://geulah.org.il/random/check/?random=$random";
+  
+//  $nx = "http://geulah.org.il/random/check/?random=$random";
+//  $nx = "https://geulah.org.il/HaTanach/verse/?verse=$key";
+$nx = "https://transliteration.geulah.org.il/key.php?key=$key";
 echo "</br><a target = '_blank' href=$nx>$random<br></a>";
 //echo "<p> The key is:  $key </p>";
 //echo '<p dir="rtl" lang="he">';
@@ -323,7 +333,17 @@ $file = 'Editornotes_utf8.txt';
 include 'show_editor.php';
 $file = 'Hebrew_utf8.txt';
 include 'show_hebrew.php';
-
+   $home_url="http://geulah.org.il/Tanach/Tanach.xml";
+   $url_output=$home_url . '?' . $shortbook . $ch . ':' . $vr . '-' . $vr;
+   $output_1='<a target = ' . "'_blank'" . ' href="';
+   $output_2='"/>';
+   $output_3="</a>";
+   $text_output=  "\n" . $b . $hebbook  . " " . $c . $ch . " " . $v . $vr . "<br>\n";
+   
+   echo("WLC Verse ".$output_1 . $url_output . $output_2 . $text_output . $output_3);
+   $url_output=$home_url . '?' . $shortbook . $ch . '-' . $ch;
+   $text_output=  "\n" . $b . $hebbook  . " " . $c . $ch . "<br>\n";
+   echo("WLC Chapter ".$output_1 . $url_output . $output_2 . $text_output . $output_3);
 echo "</details>"
 
 ?>
