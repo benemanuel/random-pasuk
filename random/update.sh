@@ -5,3 +5,4 @@ wget -O Ezra_hebrew_utf8.txt https://raw.githubusercontent.com/benemanuel/letter
 wget -O Daniel_hebrew_utf8.txt https://raw.githubusercontent.com/benemanuel/letteris/master/Daniel_hebrew.utf8_txt
 cat Ezra_hebrew_utf8.txt > Hebrew_utf8.txt
 cat Daniel_hebrew_utf8.txt >> Hebrew_utf8.txt
+chown -R www-data:www-data *
