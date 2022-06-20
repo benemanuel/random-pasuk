@@ -1,3 +1,5 @@
+# this project has been implemented as part of in the Hatanach project, look there for updates.
+
 # random-pasuk
 random pasuk from the tanach <br>
 on call shows a single verse from 1 - 23213<br>
